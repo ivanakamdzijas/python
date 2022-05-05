@@ -1,0 +1,34 @@
+import { EventEmitter, OnChanges, DoCheck } from "@angular/core";
+import { FormControl } from "@angular/forms";
+export declare class SelectAutocompleteComponent implements OnChanges, DoCheck {
+    selectPlaceholder: string;
+    placeholder: string;
+    options: any;
+    disabled: boolean;
+    display: string;
+    value: string;
+    formControl: FormControl;
+    errorMsg: string;
+    showErrorMsg: boolean;
+    selectedOptions: any;
+    multiple: boolean;
+    labelCount: number;
+    appearance: "standard" | "fill" | "outline";
+    selectionChange: EventEmitter<any>;
+    selectElem: any;
+    filteredOptions: Array<any>;
+    selectedValue: Array<any>;
+    selectAllChecked: boolean;
+    displayString: string;
+    constructor();
+    ngOnChanges(): void;
+    ngDoCheck(): void;
+    toggleDropdown(): void;
+    toggleSelectAll(val: any): void;
+    filterItem(value: any): void;
+    hideOption(option: any): boolean;
+    getFilteredOptionsValues(): any[];
+    onDisplayString(): string;
+    onSelectionChange(val: any): void;
+    trackByFn(index: any, item: any): any;
+}
